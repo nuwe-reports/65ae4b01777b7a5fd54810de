@@ -37,11 +37,7 @@ class EntityUnitTest {
     private Appointment a2;
     private Appointment a3;
 
-    @Test
-    void this_is_a_test(){
-        // DELETE THIS TEST
-        assertThat(false).isEqualTo(true);
-    }
+
 
     /** TODO
      * Implement tests for each Entity class: Doctor, Patient, Room and Appointment.

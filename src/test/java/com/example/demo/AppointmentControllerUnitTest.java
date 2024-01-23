@@ -61,7 +61,7 @@ class AppointmentControllerUnitTest{
         mockMvc.perform(post("/api/appointment").contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(appointment)))
                 .andExpect(status().isOk());
-                
+
     }
 
     @Test
@@ -81,7 +81,6 @@ class AppointmentControllerUnitTest{
         mockMvc.perform(post("/api/appointment").contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(appointment)))
                 .andExpect(status().isBadRequest());
-
     }
 
     @Test
@@ -221,7 +220,6 @@ class AppointmentControllerUnitTest{
         when(appointmentRepository.findById(appointment.getId())).thenReturn(opt);
         mockMvc.perform(get("/api/appointments/" + appointment.getId()))
                 .andExpect(status().isOk());
-                
     }
     
     @Test

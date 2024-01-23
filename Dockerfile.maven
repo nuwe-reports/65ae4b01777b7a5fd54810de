@@ -1,0 +1,26 @@
+
+FROM maven:4.0.0 AS builder
+
+WORKDIR /app
+
+
+COPY . .
+
+RUN mvn test
+
+
+FROM builder AS compiler
+
+
+RUN mvn package
+
+
+FROM openjdk:11-jre-slim
+
+WORKDIR /app
+
+
+EXPOSE 8080
+
+
+CMD ["java", "-war", "accenture-techhub.war"]
